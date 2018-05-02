@@ -8,8 +8,10 @@ public class CharacterControl : MonoBehaviour {
 	private Rigidbody2D rb;
 	int coins = 0;
 	int hearts = 0;
+	int star = 0;
 	public Text contadorCoins; 
 	public Text contadorHearts; 
+	public Text contadorStar; 
 
 	// Use this for initialization
 	void Start () {
@@ -55,6 +57,17 @@ public class CharacterControl : MonoBehaviour {
 			hearts = hearts + 1;
 			// mostramos la cantidad de monedas usando el componente Text
 			contadorHearts.text = hearts.ToString();
+
+			//Destruimos la moneda
+			GameObject.Destroy (coll.gameObject);
+
+		}
+
+		if (coll.gameObject.tag == "Star") { //Detectamos colision solo con monedas
+			// aumentar la cantidad de monedas
+			star = star + 1;
+			// mostramos la cantidad de monedas usando el componente Text
+			contadorStar.text = star.ToString();
 
 			//Destruimos la moneda
 			GameObject.Destroy (coll.gameObject);
