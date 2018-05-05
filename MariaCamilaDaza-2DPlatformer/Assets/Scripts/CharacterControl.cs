@@ -23,17 +23,17 @@ public class CharacterControl : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetKey (KeyCode.RightArrow)) {
-			this.transform.Translate (0.02f, 0f, 0f);
+			this.transform.Translate (3f * Time.deltaTime, 0f, 0f);
 
 		}
 
 		if (Input.GetKey (KeyCode.LeftArrow)) {
-			this.transform.Translate (-0.02f, 0f, 0f);
+			this.transform.Translate (-3f * Time.deltaTime, 0f, 0f);
 
 		}
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			rb.AddForce (Vector2.up * 4, ForceMode2D.Impulse); 
+			rb.AddForce (Vector2.up * 9, ForceMode2D.Impulse); 
 
 		}
 	}
